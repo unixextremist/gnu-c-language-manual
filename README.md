@@ -6,6 +6,7 @@ The text is periodically synchronized with the upstream changes from the officia
 
 If you find any flaws, typos, or passages in the translation that are unclear, please consider opening an issue here so they can be addressed.
 
+### [START READING](https://github.com/unixextremist/gnu-c-language-manual/blob/main/markdown/index.md)
 ### [DOWNLOAD ORIGINAL PDF](https://github.com/VernonGrant/gnu-c-language-manual/raw/main/gnu-c-language-manual.pdf)
 
 ---
