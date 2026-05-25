@@ -8,10 +8,7 @@ Next: [The First Example](The-First-Example.md)  
 
 # GNU C Manual 
 
-This manual explains the C language for use with the GNU Compiler
-Collection (GCC) on the GNU/Linux system and other systems. We refer to
-this dialect as GNU C. If you already know C, you can use this as a
-reference manual.
+Bu təlimat GNU/Linux sistemi və digər sistemlərdə GNU Compiler Collection (GCC) ilə istifadə üçün C dilini izah edir. Bu dialekti GNU C adlandırırıq. Əgər artıq C dilini bilirsinizsə, bu təlimatı istinad kitabçası kimi istifadə edə bilərsiniz.
 
 If you understand basic concepts of programming but know nothing about
 C, you can read this manual sequentially from the beginning to learn the
