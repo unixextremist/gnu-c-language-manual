@@ -10,9 +10,7 @@ Next: [The First Example](The-First-Example.md)  
 
 Bu təlimat GNU/Linux sistemi və digər sistemlərdə GNU Compiler Collection (GCC) ilə istifadə üçün C dilini izah edir. Bu dialekti GNU C adlandırırıq. Əgər artıq C dilini bilirsinizsə, bu təlimatı istinad kitabçası kimi istifadə edə bilərsiniz.
 
-If you understand basic concepts of programming but know nothing about
-C, you can read this manual sequentially from the beginning to learn the
-C language.
+Əgər proqramlaşdırmanın əsas anlayışlarını başa düşürsünüz, amma C dilindən heç nə bilmirsinizsə, C dilini öyrənmək üçün bu təlimatı başdan ardıcıl şəkildə oxuya bilərsiniz.
 
 If you are a beginner in programming, we recommend you first learn a
 language with automatic garbage collection and no explicit pointers,
