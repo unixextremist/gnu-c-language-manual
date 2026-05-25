@@ -12,74 +12,30 @@ Bu təlimat GNU/Linux sistemi və digər sistemlərdə GNU Compiler Collection (
 
 Əgər proqramlaşdırmanın əsas anlayışlarını başa düşürsünüz, amma C dilindən heç nə bilmirsinizsə, C dilini öyrənmək üçün bu təlimatı başdan ardıcıl şəkildə oxuya bilərsiniz.
 
-If you are a beginner in programming, we recommend you first learn a
-language with automatic garbage collection and no explicit pointers,
-rather than starting with C. Good choices include Lisp, Scheme, Python
-and Java. C's explicit pointers mean that programmers must be careful to
-avoid certain kinds of errors.
+Əgər proqramlaşdırmaya yeni başlayırsınızsa, C-dən başlamaq əvəzinə avtomatik zibil yığımı və açıq göstəriciləri olmayan bir dili öyrənməyi tövsiyə edirik. Yaxşı seçimlərə Lisp, Scheme, Python və Java daxildir. C-nin açıq göstəriciləri o deməkdir ki, proqramçılar müəyyən növ səhvlərdən qaçmaq üçün diqqətli olmalıdırlar.
 
-C is a venerable language; it was first used in 1973. The GNU C
-Compiler, which was subsequently extended into the GNU Compiler
-Collection, was first released in 1987. Other important languages were
-designed based on C: once you know C, it gives you a useful base for
-learning C++, C#, Java, Scala, D, Go, and more.
+C hörmətli bir dildir; o, ilk dəfə 1973-cü ildə istifadə olunub. GNU C Kompilyatoru, sonradan GNU Kompilyator Toplamasına genişləndirilən, ilk dəfə 1987-ci ildə təqdim edilib. Digər vacib dillər C-yə əsaslanaraq hazırlanıb: C-ni bildikdə, bu, C++, C#, Java, Scala, D, Go və digər dilləri öyrənmək üçün faydalı baza yaradır.
 
-The special advantage of C is that it is fairly simple while allowing
-close access to the computer's hardware, which previously required
-writing in assembler language to describe the individual machine
-instructions. Some have called C a "high-level assembler language"
-because of its explicit pointers and lack of automatic management of
-storage. As one wag put it, "C combines the power of assembler language
-with the convenience of assembler language." However, C is far more
-portable, and much easier to read and write, than assembler language.
+C-nin xüsusi üstünlüyü ondadır ki, o kifayət qədər sadədir, eyni zamanda kompüterin aparatına sıx çıxış imkanı verir; əvvəllər fərdi maşın əmrlərini təsvir etmək üçün yığma dilində yazmaq lazım gəlirdi. Bəziləri C-ni onun açıq göstəriciləri və yaddaşın avtomatik idarə olunmaması səbəbindən "yüksək səviyyəli yığma dili" adlandırıblar. Bir zarafatçı demişkən, "C yığma dilinin gücünü yığma dilinin rahatlığı ilə birləşdirir." Lakin C, assembler dilindən qat-qat daha portativdir və oxumaq və yazmaq üçün daha asandır.
 
-This manual describes the GNU C language supported by the GNU Compiler
-Collection, as of roughly 2017. Please inform us of any changes needed
-to match the current version of GNU C.
+Bu təlimat GNU Tərtibçi Toplusu tərəfindən təxminən 2017-ci il tarixinə qədər dəstəklənən GNU C dilini təsvir edir. GNU C-nin cari versiyasına uyğunlaşdırmaq üçün lazım olan hər hansı dəyişikliklər barədə bizə məlumat verin.
 
-When a construct may be absent or work differently in other C compilers,
-we say so. When it is not part of ISO standard C, we say it is a "GNU C
-extension," because it is useful to know that. However, standards and
-other dialects are secondary topics for this manual. For simplicity's
-sake, we keep those notes short, unless it is vital to say more.
+Bir quruluş digər C tərtibatçılarında mövcud olmaya və ya fərqli işləyə bilərsə, biz bunu bildiririk. O, ISO standart C-nin tərkib hissəsi deyilsə, onun "GNU C genişlənməsi" olduğunu bildiririk, çünki bunun bilinməsi faydalıdır. Lakin standartlar və digər ləhcələr bu təlimat üçün ikincili mövzulardır. Sadəlik naminə, əlavə məlumat vermək vacib olmadıqca, bu qeydləri qısa saxlayırıq.
 
-Likewise, we hardly mention C++ or other languages that the GNU Compiler
-Collection supports. We hope this manual will serve as a base for
-writing manuals for those languages, but languages so different can't
-share one common manual.
+Oxşar şəkildə, biz demək olar ki, GNU Tərtibatçı Toplamı tərəfindən dəstəklənən C++ və ya digər dilləri demir və ya demək olar ki, qeyd etmirik. Ümid edirik ki, bu təlimat həmin dillər üçün təlimatların yazılması üçün baza rolunu oynayacaq, lakin bu qədər fərqli dillər bir ortaq təlimatı paylaşa bilməzlər.
 
-Some aspects of the meaning of C programs depend on the target platform:
-which computer, and which operating system, the compiled code will run
-on. Where this is the case, we say so.
+C proqramlarının mənasının bəzi cəhətləri hədəf platformadan asılıdır: tərtib olunmuş kodun hansı kompüterdə və hansı əməliyyat sistemində işləyəcəyindən. Belə hallarda biz bunu qeyd edirik.
 
-The C language provides no built-in facilities for performing such
-common operations as input/output, memory management, string
-manipulation, and the like. Instead, these facilities are provided by
-functions defined in the standard library, which is automatically
-available in every C program. See [The GNU C
-Library](https://www.gnu.org/software/libc/manual/html_node/index.md#Top)
-in The GNU C Library Reference Manual.
+C dili giriş/çıxış, yaddaş idarəetməsi, mətn emalı və buna bənzər ümumi əməliyyatları yerinə yetirmək üçün daxili imkanlar təqdim etmir. Bunun əvəzinə, bu imkanlar standart kitabxanada müəyyən edilmiş funksiyalar vasitəsilə təmin olunur ki, bu kitabxana hər C proqramında avtomatik olaraq mövcuddur. Baxın [The GNU C Library](https://www.gnu.org/software/libc/manual/html_node/index.md#Top) GNU C Kitabxanası İstinad Manualında.
 
-GNU/Linux systems use the GNU C Library to do this job. It is itself a C
-program, so once you know C you can read its source code and see how its
-library functions do their jobs. Some fraction of the functions are
-implemented as *system calls*, which means they contain a special
-instruction that asks the system kernel (Linux) to do a specific task.
-To understand how those are implemented, you'd need to read Linux source
-code instead. Whether a library function is a system call is an internal
-implementation detail that makes no difference for how to call the
-function.
+GNU/Linux sistemləri bu işi görmək üçün GNU C Kitabxanasından istifadə edir. O, özü C proqramı olduğundan, C dilini bildikdən sonra onun mənbə kodunu oxuyub kitabxana funksiyalarının necə işlədiyini görə bilərsiniz. Funksiyaların bir qismi *sistem çağırışları* kimi həyata keçirilib, yəni onlar sistem nüvəsindən (Linux) müəyyən bir tapşırığı yerinə yetirməyi xahiş edən xüsusi bir təlimatı ehtiva edir.
+Onların necə həyata keçirildiyini başa düşmək üçün isə Linux-un mənbə kodunu oxumaq lazımdır. Kitabxana funksiyasının sistem çağırışı olub-olmaması daxili implementasiya detalidir və funksiyanın çağırılma tərzinə heç bir təsir etmir.
 
-This manual incorporates the former GNU C Preprocessor Manual, which was
-among the earliest GNU manuals. It also uses some text from the earlier
-GNU C Manual that was written by Trevis Rothwell and James Youngman.
+Bu təlimat əvvəlki GNU C Preprocessor Təlimatını özündə birləşdirir, o, ən erkən GNU təlimatlarından biri idi. O, həmçinin Trevis Rothwell və James Youngman tərəfindən yazılmış əvvəlki GNU C Təlimatından bəzi mətnlərdən istifadə edir.
 
-GNU C has many obscure features, each one either for historical
-compatibility or meant for very special situations. We have left them to
-a companion manual, the GNU C Obscurities Manual, which will be
-published digitally later.
+GNU C-də bir çox qaranlıq xüsusiyyət var, hər biri ya tarixi uyğunluq üçün, ya da çox xüsusi hallar nəzərdə tutulub. Biz onları GNU C Qaranlıq Xüsusiyyətlər Manualı adlı əlavə təlimata ötürmüşük, o daha sonra rəqəmsal formatda nəşr olunacaq.
 
-Please report errors and suggestions to c-manual\@gnu.org.
+Xahiş edirik səhvləri və təklifləri c-manual@gnu.org ünvanına bildirin.
 
 ## Table of Contents 
 
